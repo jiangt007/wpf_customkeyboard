@@ -1,0 +1,107 @@
+<UserControl
+    x:Class="CustomKeyBoard.Views.NumericKeyboardView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:ClassModifier="internal"
+    Background="{DynamicResource KeyboardBackgroundAccentBrush}"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/DefaultStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <UniformGrid Columns="3" Rows="4">
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="1"
+                Content="1"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="2"
+                Content="2"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="3"
+                Content="3"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="4"
+                Content="4"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="5"
+                Content="5"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="6"
+                Content="6"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="7"
+                Content="7"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="8"
+                Content="8"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="9"
+                Content="9"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="."
+                Content="."
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="0"
+                Content="0"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <ContentControl Content="{StaticResource BackspaceButton}" />
+        </UniformGrid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                Command="{Binding AddCharacter}"
+                CommandParameter="+"
+                Content="+"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+            <Button
+                Grid.Row="1"
+                Command="{Binding AddCharacter}"
+                CommandParameter="-"
+                Content="-"
+                Style="{DynamicResource KeyboardButtonStyle}" />
+
+            <ContentControl
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Content="{StaticResource AcceptButton}" />
+        </Grid>
+    </Grid>
+</UserControl>
